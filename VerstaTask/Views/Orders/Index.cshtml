@@ -1,0 +1,66 @@
+﻿@model IEnumerable<VerstaTask.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Home</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipientCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipientAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CargoWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransportationDate)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CargoWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransportationDate)
+        </td>
+    </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model VerstaTask.Models.Order
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create order</h1>
+
+<hr />
+<div class="row">
+    <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SenderCity" class="control-label"></label>
+                <input asp-for="SenderCity" class="form-control" type="text" />
+                <span asp-validation-for="SenderCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenderAddress" class="control-label"></label>
+                <input asp-for="SenderAddress" class="form-control" type="text" />
+                <span asp-validation-for="SenderAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecipientCity" class="control-label"></label>
+                <input asp-for="RecipientCity" class="form-control" type="text" />
+                <span asp-validation-for="RecipientCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecipientAddress" class="control-label"></label>
+                <input asp-for="RecipientAddress" class="form-control" type="text" />
+                <span asp-validation-for="RecipientAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CargoWeight" class="control-label"></label>
+                <input asp-for="CargoWeight" class="form-control" type="number" />
+                <span asp-validation-for="CargoWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransportationDate" class="control-label"></label>
+                <input asp-for="TransportationDate" class="form-control" type="date" />
+                <span asp-validation-for="TransportationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
